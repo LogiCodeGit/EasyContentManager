@@ -1,0 +1,80 @@
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+	</HEAD>
+	<BODY>
+
+
+
+		<div ID="EditableContent">
+
+			CONTENUTO EDITABILE
+
+		</div>
+
+		<INPUT type="button" value="Button" id="button1" name="button1" onclick='javascript:EditContent()'>
+
+
+		<script>
+function EditContent()
+{
+	try
+	{
+		// Identifica i dati da editare
+		var args = new Array(), elem, rets = null, sParam = "";
+		args["HTMLContent"] = window.EditableContent.innerHTML;
+		if( !HTML.checked )
+			args["TextOnly"] = "true";
+		if( ENG.checked )
+		    sParam = "?Language=1";
+		else
+		    sParam = "?Language=0";
+		if( SAFE.checked )
+		    sParam = sParam + "&DHTMLSafe=true";
+		sParam = sParam + "&BodyOnly=true";
+        
+        if( DIALOG.checked ) 
+        {
+		    // Avvia l'editor
+		    rets = showModalDialog( "frmDHTMLEditor.aspx" + sParam,
+                                 args,
+                                 "resizable:1; help:0; status:0; dialogWidth:50em; dialogHeight:30em");
+    		
+		    // Acquisisce eventuale esito
+		    if( rets != null ) 
+		    {
+			    for( elem in rets ) 
+			    {
+				    if( "HTMLContent" == elem && rets["HTMLContent"] != null) 
+				    {
+					    if( HTML.checked )
+						    window.EditableContent.innerHTML = rets["HTMLContent"];
+					    else
+						    window.EditableContent.innerHTML = "<PRE>" + rets["HTMLContent"] + "</PRE>";
+				    }
+			    }
+		    }
+	    }
+	    else
+	    {
+	        window.open("frmDHTMLEditor.aspx" + sParam,"_blank", "status=yes,location=no,menubar=no");
+	    }
+	}
+	catch(e)
+	{
+		alert( e.description );
+	}
+}
+
+		</script>
+		<INPUT id="HTML" type="checkbox" CHECKED name="Checkbox1">&nbsp;HTML
+        <INPUT id="SAFE" type="checkbox" name="Checkbox1" value="on">
+        SAFE
+        <INPUT id="DIALOG" type="checkbox" CHECKED name="Checkbox1">
+        DIALOG
+        <INPUT id="ENG" type="checkbox" CHECKED name="Checkbox1">
+        INGLESE
+
+	</BODY>
+</HTML>

@@ -1,0 +1,95 @@
+BODY
+{
+    FONT-SIZE: 10px;
+    FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+    SCROLLBAR-FACE-COLOR: #ecf1f5;
+    SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+    SCROLLBAR-SHADOW-COLOR: #ffffff;
+    SCROLLBAR-3DLIGHT-COLOR: #ecf1f5;
+    SCROLLBAR-ARROW-COLOR: #ffffff;
+    SCROLLBAR-TRACK-COLOR: #ffffff;
+    SCROLLBAR-DARKSHADOW-COLOR: #C6C3C6;
+    SCROLLBAR-BASE-COLOR: #cccccc;
+    background-color: white;
+    border-left-style: solid; 
+    border-left-width: 1px; 
+    border-left-color: #C0C0C0;
+    margin-top: 3px;
+    margin-left: 2px;
+    /*
+    background-image: url('/images/backgroundLine.gif'); 
+    background-repeat: repeat; 
+    background-attachment: fixed;
+    */
+}
+TABLE
+{
+	FONT-SIZE: 10pt;
+}
+TD.Grid
+{
+	BORDER-RIGHT: 1px solid; 
+	BORDER-BOTTOM: 1px solid;
+	COLOR: #000084;
+}
+TD.GridHead
+{
+	background-image: url(images/cell_head_bg_blu_xl.gif);
+	background-repeat: repeat-x;
+	background-position-y: center;
+	BORDER-RIGHT: 1px solid; 
+	BORDER-TOP: 1px solid; 
+	FONT-SIZE: xx-small;
+	COLOR: white;
+}
+TD.GridHeadFixed
+{
+	background-image: url(images/cell_head_bg_blu_xl.gif);
+	background-repeat: repeat-x;
+	background-position-y: center;
+	BORDER-LEFT: 1px solid; 
+	BORDER-TOP: 1px solid; 
+	FONT-SIZE: xx-small;
+	COLOR: white;
+}
+TD.ReferenceHead
+{
+	background-image: url(images/cell_head_bg.gif);
+	BORDER-RIGHT: 1px solid; 
+	BORDER-TOP: 1px solid; 
+	FONT-SIZE: xx-small;
+}
+TD.GridFixed
+{
+	BORDER-LEFT: 1px solid; 
+	BORDER-BOTTOM: 1px solid;
+}
+A
+{
+	text-decoration: none;
+	color: #D77700; /*#808080;*/
+}
+A:hover
+{
+	text-decoration: none;
+	color: Lime;
+	background-color: silver;
+}
+
+/* http://www.dafont.com/theme.php?cat=302 */
+/* http://stackoverflow.com/questions/2727686/css-external-fonts */
+/* http://www.kirsle.net/wizards/ttf2eot.cgi */
+@font-face 
+{
+	font-family: LCDFont;
+	src: url('/Styles/digital-7__mono_.eot');   /* EOT for IE */
+}
+@font-face 
+{
+	font-family: LCDFont;
+	src: url('/Styles/digital-7_(mono).ttf');   /* TTF for CSS3 */
+}
+.LCDStyle 
+{
+    font-family: LCDFont;
+}

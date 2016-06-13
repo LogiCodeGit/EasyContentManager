@@ -1,0 +1,11 @@
+// TypeScript configuration for compiler, see alsto /gruntfile.js for automating minify and other js library publication in the default /App folder
+{
+  "compilerOptions": {
+    "module": "umd",
+    "target": "es5",
+    "sourceMap": true,
+    "noImplicitAny":true,
+    "removeComments":true,
+    "noEmitHelpers": true
+  }
+}

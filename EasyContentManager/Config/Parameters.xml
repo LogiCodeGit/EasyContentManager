@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<appSettings>
+  <!--
+	' Definizione del nome dell'applicazione
+	' Il nome dell'applicazione definisce anche il nome
+	' del database e il nome della DLL (ActiveX) che contiene 
+	' gli oggetti Business (registrata nel server).
+  '
+  ' Per cambiare il nome del DB relativo ad un'azienda specifica è possibile
+  ' modificare il parametro COMPANY_NAME differenziandolo da quello predefinito
+  ' oppure mediante l'impostazione di DATABASE_CONNECTION_STRING è possibile
+  ' modificare l'intero l'intera connessione per l'accesso a DB di tipo 
+  ' differente oppure collocati in altri server.
+  ' (vedi anche DATABASE_SUBDIR e gli altri parametri di seguito)
+	-->
+  <add key="APP_NAME" value="EasyContentManager" />
+  <add key="COMPANY_NAME" value="3Emmegrafica" />
+  <add key="COMPANY_DESCRIPTION" value="3Emmegrafica snc" />
+  <!-- Specificare l'eventuale lista delle aziende gestite oltre quella predefinita, separare i nomi con '|' -->
+  <!-- Es.: "LogiCode Srl|Rossi Mario|Azienda Anonima... ", vedi anche CONNECTION_STRING -->
+  <add key="COMPANY_LIST" value="" />
+  <!-- Eventuali stringhe di connessione per ogni azienda, se non specificato viene creato un database predefinito (MDB) -->
+  <add key="DATABASE_CONNECTION_STRING_[COMPANY]" value="" />
+  <!-- Eventuali descrizioni per ogni azienda -->
+  <add key="COMPANY_DESCRIPTION_[COMPANY]" value="" />
+  <!--' Immagine Logo Applicazione  -->
+  <add key="APP_LOGO_IMG" value="public/logo.png" />
+  <add key="APP_LOGO_IMG_HEIGHT" value="70" />
+
+  <!-- Disabilita le funzion di registrazione / recupero password (True/False) -->
+  <add key="LOGIN_DISABLE_REG_AND_RECOVERY" value=""/>
+  
+  <!--
+	' Definizione dell'indirizzo web relativo all'amministratore
+	' per il supporto clienti
+	-->
+  <add key="ADMIN_SUPPORT_EMAIL" value="info@logicode.it" />
+  <add key="ADMIN_SUPPORT_EMAIL_2ND" value="mdani@logicode.it" />
+  <add key="ADMIN_SUPPORT_NAME" value="LogiCode" />
+  <add key="ADMIN_SUPPORT_EMAIL_SMTP" value="smtp.logicode.it" />
+  <add key="ADMIN_SUPPORT_FAX" value="0575 401315" />
+  <!-- Necessari solo per l'invio della posta mediante autenticazione SMTP -->
+  <add key="ADMIN_SUPPORT_SMTP_AUTH_USER" value="info@logicode.it" />
+  <add key="ADMIN_SUPPORT_SMTP_AUTH_PWD" value="(Asia)" />
+  <!--(Posta)-->
+  <!--
+	' Indirizzario contenente i files di database per 
+	' quelli di tipo Jet (mdb) e dati di connessione predefiniti
+	-->
+  <!--<add key="DATABASE_SUBDIR" value="Database"/> ' Predefinito relativo a quello corrente-->
+  <add key="DATABASE_SUBDIR" value="/mdb-database" />
+  <!--' Personalizzato-->
+  <add key="DATABASE_CONNECTION_STRING" value="" />
+  <!--' Se si tratta di MDB non è necessario -->
+  <add key="DATABASE_EXTENSION" value="" />
+  <!--' Estensione del file di database-->
+  <add key="DATABASE_PASSWORD" value="" />
+  <!--' Password di accesso al database-->
+  <!--
+	' Definizione della tipologia del database
+	' (i valori fanno riferimento alle definizioni OODBMS_DatabaseType)
+	-->
+  <add key="DATABASE_TYPE" value="3" />
+  <!--' OODBMS_DatabaseType.odbtMSJet-->
+  <!--' Indirizzario contenente i documenti/immagini associati ai dati (embedded o gestiti dalle funzioni business)-->
+  <add key="DOCUMENT_SUBDIR" value="/public" />
+  <!--' Indirizzario contenente le pagine personalizzate -->
+  <add key="CUSTOM_PAGE_SUBDIR" value="/public" />
+  <!--' Indirizzario contenente le immagini utilizzate dal sito (non dalle funzioni di business) -->
+  <add key="IMAGE_SUBDIR" value="/Images" />
+  <!--' Predefinito relativo a quello corrente-->
+  <!--<add key="IMAGE_SUBDIR" value="/images"7>-->
+  <!--' Personalizzato-->
+  <!--' Indirizzario o pagina iniziale dell'applicazione-->
+  <add key="START_APP_PATH" value="http://www.logicode.it" />
+  <!--' Indirizzario o pagina del forum-->
+  <add key="START_FORUM_PATH" value="http://www.logicode.it" />
+  <!--' Indirizzo di riferimento per il Webmaster-->
+  <add key="WEBMASTER_INFO" value="&lt;font size='1'&gt;&lt;i&gt;Powered by &lt;a href='http://www.logicode.it' target='_blank'&gt;LogiCode&lt;/a&gt;&lt;/i&gt;&lt;/font&gt;" />
+  <!--' Pagina di verifica delle licenze e contratti di aggiornamento -->
+  <!--' In ingresso accetta i seguenti parametri:
+          <UserID> Identificativo dell'utente/cliente (può essere anche l'email)
+          <EMail> Indirizzo Email dell'utente/cliente (può essere specificato in sostituzione dell'UserID)
+          <Product> Codice o Nome del dispositivo
+          <RequestType> Tipo di dati richiesti:
+              "UserEMail"           Riporta l'indirizzo e-mail dell'utente/cliente
+              "UserName"            Riporta il nome dell'utente/cliente 
+              "LicenzeDateStart"    Riporta la data di acquisto della licenza (dd/mm/yyyy)
+              "LicenzeDateEnd"      Riporta la data di scadenza della licenza (dd/mm/yyyy)
+              '
+              "AllData"             Riporta tutti i dati della licenza visualizzabili come pagina web
+          
+          Riporta in Response(): 
+            - INF:[RequestedData]
+                Dato richiesto in relazione a RequestType, se i dati non sono
+                presenti riporta [RequestData] vuoto, quindi solo 'INF:'
+            - ERR:[Descrizione dell'errore in caso di esito negativo]
+          
+            - Con "AllData" visualizza tutti i dati come pagina web
+  -->
+  <add key="CUSTOM_PAGE_VALIDATE_LICENZE" value="/CustomValidateLicenze.aspx" />
+  <!--' Parametri predefiniti per l'applicazione configurabili
+		' nella tabella di sistema (oo_Parameters)
+	-->
+  <add key="PARAMETER_SPESE_SPEDEZIONE" value="ImportoSpeseSpedizione" />
+  <add key="PARAMETER_IVA" value="IVA" />
+  <add key="PARAMETER_INFORMATIVA_CLIENE" value="InformativaCliente" />
+  <add key="PARAMETER_ARTICOLI_OPERATORI" value="AbilitaElementiOperatori" />
+  <add key="PARAMETER_IMPORTO_MINIMO" value="ImportoMinimo" />
+  <!--
+	' Attiva / Disattiva il supporto alla connessione protetta
+	' mediante certificato SSL
+	-->
+  <add key="ENABLE_SSL_CONNECTION_SUPPORT" value="true" />
+  <!--
+	' Sito/Indirizzario contenente la pagina relativa alla
+	' conferma di pagamento per la transazione con
+	' la banca.
+	' La pagina da richiamare nel sito è quella di conferma:
+	' <PAGE_NAME_PAYMENT_CONFIRMATION>
+	-->
+  <add key="ON_LINE_PAYMENT_SITE" value="" />
+  <!--
+	' Abilita l'acquisto senza la validazine del Cliente se impostato a "true"
+	-->
+  <add key="BUY_WITHOUT_VALIDATION" value="false" />
+  <!--
+	' Abilita la visualizzazione dei prezzi solo dopo la validazine del Cliente se impostato a "false"
+	-->
+  <add key="VIEW_PRICES_WITHOUT_VALIDATION" value="true" />
+  <!--
+	' Nome dell'immagine usata per la selezione degli elementi
+	' nel carrello, questa immagine deve trovarsi
+	' nella cartella _site.Glb.GetParam("IMAGE_SUBDIR")
+	-->
+  <add key="BASKET_SELECTION_IMAGE_RED" value="buy_it.gif" />
+  <add key="BASKET_SELECTION_IMAGE" value="server.ico" />
+  <add key="BASKET_DEFAULT_LINKS_IMAGE" value="info_link.gif" />
+  <!--
+	' Nome delle immagini predefinite per altri
+	' tasti funzione usati nella griglia dati
+	-->
+  <add key="GRID_DEFAULT_DELETE_IMAGE" value="delete.bmp" />
+  <!-- '"trash.bmp"-->
+  <add key="GRID_DEFAULT_OPEN_IMAGE" value="plan.bmp" />
+  <add key="GRID_DEFAULT_SSL_IMAGE" value="secur.jpg" />
+  <!-- key.bmp -->
+  <!--
+	' Dimensione massima delle immagini in anteprima
+	' nelle griglie o pagine di dettaglio (in pixels)
+	-->
+  <add key="GRID_IMAGE_PREVIEW_WIDTH" value="100" />
+  <add key="GRID_IMAGE_PREVIEW_HEIGHT" value="0" />
+  <!--' In proporzione alla larghezza (25)-->
+  <add key="DETAIL_IMAGE_PREVIEW_WIDTH" value="100" />
+  <add key="DETAIL_IMAGE_PREVIEW_HEIGHT" value="0" />
+  <!--' In proporzione alla larghezza (25)-->
+  <!--
+	' Dimensione massima delle immagini in anteprima
+	' nei forms (in pixels)
+	-->
+  <add key="FORM_IMAGE_PREVIEW_WIDTH" value="100" />
+  <!--' 0 per proporzione all'altezza -->
+  <add key="FORM_IMAGE_PREVIEW_HEIGHT" value="0" />
+  <!--' 0 per proporzione alla larghezza -->
+  <!--
+	' Impostazione predefinita per la visualizzazione
+	' di tutti i campi nel gruppo principale, altrimenti
+	' visualizza nel gruppo principale solo i campi
+	' che non sono presenti negli altri gruppi
+	-->
+  <add key="ALL_FIELDS_IN_MAIN_GROUP" value="false" />
+  <!-- true/false -->
+  <!--
+	' Impostazione predefinita per la presentazione 
+	' dei campi a sola lettura nel form di gestione
+	' visualizzazione/modifica/inserimento dati
+	-->
+  <add key="READONLY_FIELD_WITHOUT_BOX" value="true" />
+  <!--' Impostare "false" per ottenre la presentazione dei campi a sola lettura mediante label anzichè caselle di testo -->
+  <!--
+	' Contiene le definizioni predefinite per lo stile 
+	' di visualizzazione del sito
+	' Le classi di visualizzazione per i vari tag possono
+	' essere definite in modo da essere usate nella forma
+	' class="[className]" nelle costanti seguenti.
+	-->
+  <add key="MODULE_STYLE_SHEET" value="Contents.css" />
+  <!--' Costanti usate per la costruzione della visualizzazione/modifica dati-->
+  <add key="HTML_FIXED_INPUT_TABLE_TAGS" value=" width='100%' border=0 cellspacing=0 cellpadding=3 " />
+  <add key="HTML_FIXED_FIELD_NAME_TD_TAGS" value=" vAlign=middle bgcolor=#F7F7F7 align=right bordercolor=beige style='FONT-WEIGHT: bold; COLOR: #000084; BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; FONT-SIZE: xx-small' " />
+  <!--<add key="HTML_FIXED_CONFIRM_BUTTON_STYLE" value=" style='color: #D77700; font-weight: bold; FONT-SIZE: xx-small; border: 1px solid #808080'"/>-->
+  <add key="HTML_FIXED_CONFIRM_BUTTON_STYLE" value=" style='color: red; font-weight: bold; FONT-SIZE: xx-small; border: 1px solid #808080'" />
+  <add key="HTML_FIXED_CONFIRM_BUTTON_STYLE_HIDE" value=" style='color: red; font-weight: bold; FONT-SIZE: xx-small; border: 1px solid #808080; display:none'" />
+  <add key="HTML_FIXED_EXIT_BUTTON_STYLE" value=" style='color: gray; FONT-SIZE: xx-small; border: 1px solid #808080'" />
+  <add key="HTML_FIXED_OTHER_BUTTON_STYLE" value=" style='FONT-SIZE: xx-small; border: 1px solid #808080'" />
+  <add key="HTML_FIXED_OTHER_BUTTON_STYLE_HIDE" value=" style='FONT-SIZE: xx-small; border: 1px solid #808080; display:none'" />
+  <!--' Costanti usate per la costruzione della ricerca dati-->
+  <add key="HTML_FIXED_SEARCH_TABLE_TAGS" value=" width='70%' border=0 cellspacing=0 cellpadding=2 " />
+  <add key="HTML_FIXED_SEARCH_FIELD_NAME_TD_TAGS" value=" vAlign=middle align=right bordercolor=White style='COLOR: #000084; BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; FONT-SIZE: xx-small' " />
+  <add key="HTML_FIXED_SEARCH_CONTROL_TAGS" value=" style='FONT-SIZE: xx-small' " />
+  <add key="HTML_FIXED_SEARCH_BUTTON_STYLE" value=" style='color: #D77700; font-weight: bold; FONT-SIZE: xx-small; border: 1px solid #808080'" />
+  <!--
+	' Costanti usate per la costruzione delle Reference nella
+	' visualizzazione/modifica dati
+	-->
+  <add key="HTML_FIXED_REFERENCE_HEAD_TABLE_TAGS" value=" border=0 cellspacing=0 cellpadding=3 " />
+  <add key="HTML_FIXED_REFERENCE_HEAD_TR_TAGS" value="" />
+  <!--' '" bgcolor=Gainsboro "-->
+  <add key="HTML_FIXED_REFERENCE_HEAD_TD_TAGS" value=" bordercolor=White class=ReferenceHead " />
+  <!-- '" bordercolor=White style='BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; FONT-SIZE: xx-small' -->
+  <add key="HTML_FIXED_REFERENCE_ROWS_TD_TAGS" value=" vAlign=top bordercolor=Gainsboro style='BORDER-RIGHT: 1px solid; BORDER-BOTTOM: 1px solid; FONT-SIZE: x-small' " />
+  <add key="HTML_FIXED_REFERENCE_ROWS_TD_TAGS_ALT" value=" vAlign=top bordercolor=Gainsboro style='BORDER-RIGHT: 1px solid; BORDER-BOTTOM: 1px solid; FONT-SIZE: x-small' " />
+  <!--' Costanti usate per la costruzione della griglia di dati-->
+  <add key="HTML_FIXED_GRID_TABLE_TAGS" value=" width='100%' border=0 cellspacing=0 cellpadding=4 " />
+  <add key="HTML_FIXED_GRID_HEAD_TR_TAGS" value=" height='16'" />
+  <!--' '" bgcolor=Gainsboro "-->
+  <add key="HTML_FIXED_GRID_HEAD_TD_TAGS" value=" bgcolor=#F7F7F7 align=center bordercolor=#DEDFDE class=GridHead " />
+  <add key="HTML_FIXED_GRID_ROWS_TD_TAGS" value=" bgcolor=#F7F7F7 vAlign=center bordercolor=#DEDFDE class=Grid style='FONT-SIZE: xx-small'" />
+  <add key="HTML_FIXED_GRID_ROWS_TD_TAGS_ALT" value=" bgcolor=#eaeaea vAlign=center bordercolor=#DEDFDE class=Grid style='FONT-SIZE: xx-small'" />
+  <add key="HTML_FIXED_GRID_HEAD_FUNC_TD_TAGS" value=" bordercolor=#DEDFDE class=GridHeadFixed " />
+  <!-- '" align=center style='BORDER-RIGHT: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-TOP: 1px solid' "-->
+  <add key="HTML_FIXED_GRID_ROWS_FUNC_TD_TAGS" value=" bgcolor=#dadada bordercolor=#DEDFDE align=center class=GridFixed " />
+  <!-- 'style='BORDER-RIGHT: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-TOP: 1px solid' "-->
+  <!--' Costanti usate per i titoli delle notizie-->
+  <add key="HTML_FIXED_PREVIEW_TITLE_TAGS" value=" style='color: #3e3694' " />
+  <add key="HTML_FIXED_PREVIEW_TEXT_BG_COLOR" value="#f0f0f0" />
+  <add key="HTML_FIXED_PREVIEW_TEXT_BG_COLOR_ALTERNATE" value="#eaeaea" />
+  <add key="HTML_FIXED_PREVIEW_TEXT_BG_COLOR_SELECTED" value="#dadada" />
+  <add key="HTML_FIXED_PREVIEW_PREVIEW_TEXT_MAX_LEN" value="150" />
+  <add key="HTML_FIXED_PREVIEW_MAX_ELEMENTS_PER_PAGE" value="8" />
+  <add key="HTML_FIXED_PREVIEW_MAX_PAGES_SELECTION" value="10" />
+  <!--' Impostazione delle opzioni di presentazione frames-->
+  <add key="HTML_LEFT_BACKGROUND_IMG" value="images/page_head_bg.gif" />
+  <add key="HTML_RIGHT_BACKGROUND_IMG" value="" />
+  <add key="HTML_TOP_BACKGROUND_IMG" value="images/page_head_bg.gif" />
+  <add key="HTML_CENTER_BACKGROUND_IMG" value="" />
+  <add key="HTML_BOTTOM_BACKGROUND_IMG" value="" />
+  <add key="HTML_FIXED_LINKS_LEFT_IMG" value="images/LinkLeft.gif" />
+  <add key="HTML_FIXED_LINKS_RIGHT_IMG" value="images/LinkRight.gif" />
+  <add key="HTML_FIXED_LINKS_BACK_COLOR" value="#000084" />
+  <add key="HTML_FIXED_LINKS_LEFT_IMG_GRAY" value="images/LinkLeftGray.gif" />
+  <add key="HTML_FIXED_LINKS_RIGHT_IMG_GRAY" value="images/LinkRightGray.gif" />
+  <add key="HTML_FIXED_LINKS_BACK_COLOR_GRAY" value="#848284" />
+  <add key="HTML_FIXED_LINKS_IMG_WIDTH" value="12" />
+  <add key="HTML_FIXED_LINKS_IMG_HEIGHT" value="20" />
+  <add key="HTML_FIXED_LINKS_DOWN_LEFT_IMG" value="images/LinkLeftOrange.gif" />
+  <add key="HTML_FIXED_LINKS_DOWN_RIGHT_IMG" value="images/LinkSeparator.gif" />
+  <add key="HTML_FIXED_LINKS_DOWN_BACK_COLOR" value="#FF0000" />
+  <!--' Definizione dei colori e impostazioni varie-->
+  <add key="HTML_FIXED_COLOR_BASKET_TITLE_BG" value="#C6C3C6" />
+  <!--' Colore di sfondo nei titoli per le pagine del carrello-->
+  <add key="HTML_FIXED_MAIN_FUNCTION_TR_TAGS" value="style='background-color: #f0f0f0; COLOR: gray'" />
+  <!--' Stile delle righe contente i tasti principali delle varie funzioni-->
+  <add key="HTML_FIXED_COLOR_PANEL" value="#f0f0f0" />
+  <!--' Colore di sfondo nei pannelli e nelle maschere di gestione-->
+  <!-- Nome della pagina da allegare in fondo ad ogni pagina di contenuto -->
+  <add key="PAGE_NAME_CONTENT_FOOTER" value="footer.html" />
+  <!--
+    ' Nome dei tipi di pagine conosciute dall'applicazione (predefinite)
+    ' I nomi effettivi delle pagine sono nel seguente formato:
+    '	frm[PAGE_NAME].aspx
+	-->
+  <add key="PAGE_NAME_APP_START" value="AppStart" />
+  <!-- ' Effettua l'avvio dell'applicazione-->
+  <add key="PAGE_NAME_APP_END" value="AppEnd" />
+  <!-- ' Effettua l'uscita dall'applicazione-->
+  <add key="PAGE_NAME_APP_CHECK_UPDATE" value="AppCheckUpdate" />
+  <!-- ' Effettua l'aggiornamento dell'applicazione-->
+  <add key="PAGE_NAME_APP_ACCESS" value="AppMenu" />
+  <!-- ' Pagina iniziale di accesso all'applicazione-->
+  <add key="PAGE_NAME_LOGIN" value="Login" />
+  <!-- ' Effettua l'accesso utente-->
+  <add key="PAGE_NAME_LOGOUT" value="Logout" />
+  <!-- ' Effettua l'uscita utente-->
+  <add key="PAGE_NAME_FORGOTTEN_PASSWORD" value="ForgottenPassword" />
+  <!-- ' Effettua la richiesta di password dimenticata-->
+  <add key="PAGE_NAME_DATA_ROW" value="DataRow" />
+  <!-- ' Visualizzazione/Modifica/Inserimento dati -->
+  <add key="PAGE_NAME_DATA_GRID" value="DataGrid" />
+  <!-- ' Visualizzazione griglia di dati  -->
+  <add key="PAGE_NAME_CONTENT_IMAGE_MANAGER" value="ImageManager" />
+  <!-- ' Gestione immagini multiple  -->
+  <add key="PAGE_NAME_CUSTOM_PAGE_MANAGER" value="CustomPageManager" />
+  <!-- ' Gestione pagine personalizzate  -->
+  <!--
+	' Nome dei tipi di pagine estese
+	' I nomi effettivi delle pagine sono nel seguente formato:
+	'	frm[PAGE_NAME].aspx
+	-->
+  <add key="PAGE_NAME_CONTENT_START_FIRST" value="ContentEntryPage" />
+  <!--' AppStart, ContentStart, oppure una pagina personalizzata-->
+  <add key="PAGE_NAME_REGISTRATION_COMPLETE" value="RegistrationComplete" />
+  <!--' Visualizzazione il messaggio di registrazione completata-->
+  <add key="PAGE_NAME_MENU_OPERATORE" value="Menu_Operatore" />
+  <!--' Visualizzazione del menù Operatore-->
+  <add key="PAGE_NAME_MENU_CLIENTE" value="Menu_Cliente" />
+  <!--' Visualizzazione del menù Cliente-->
+  <add key="PAGE_NAME_BASKET_CLIENTI" value="Basket_Clienti" />
+  <!--' Gestione carrello Clienti-->
+  <add key="PAGE_NAME_BASKET_FRAME_VENDITA" value="BasketFrame_Allarmi" />
+  <!--' Gestione frame elementi in allarmi nel carrello-->
+  <add key="PAGE_NAME_BASKET_PAYMENT_VENDITA" value="BasketPayment_Allarmi" />
+  <!--' Immissione dati di pagamento per la allarmi-->
+  <add key="PAGE_NAME_PAYMENT_RESULT" value="PaymentResult" />
+  <!--' Esito del pagamento -->
+  <add key="PAGE_NAME_BASKET_INSERT" value="BasketInsert_Porta" />
+  <!--' Gestisce l'inserimento di un porta nel carrello-->
+  <add key="PAGE_NAME_PROMOTION_FRAME" value="PromotionFrame" />
+  <!--' Gestisce le promozioni degli elementi-->
+  <add key="PAGE_NAME_GOTO_BASKET" value="GoToBasket" />
+  <!--' Attiva il carrello-->
+  <add key="PAGE_NAME_PREVIEW" value="Preview_Porta" />
+  <!--' Gestisce l'anteprima di un porta -->
+  <add key="PAGE_NAME_PREVIEW_FRAME_NEWS" value="PreviewFrameNews" />
+  <!--' Gestisce l'anteprima delle notizie-->
+  <add key="PAGE_NAME_PREVIEW_FRAME_ALBUM" value="PreviewFrameAlbum" />
+  <!--' Gestisce l'anteprima delle presentazioni (album)-->
+  <add key="PAGE_NAME_PREVIEW_FRAME_FAQ" value="PreviewFrameFAQ" />
+  <!--' Gestisce l'anteprima delle richieste (FAQ)-->
+  <add key="PAGE_NAME_SHOW_FRAME_NEWS" value="ShowNews" />
+  <!--' Gestisce la visualizzazione delle notizie-->
+  <add key="PAGE_NAME_SHOW_FRAME_ALBUM" value="ShowAlbum" />
+  <!--' Gestisce la visualizzazione delle presentazioni (album)-->
+  <add key="PAGE_NAME_SHOW_FRAME_FAQ" value="ShowFAQ" />
+  <!--' Gestisce la visualizzazione delle richieste (FAQ)-->
+  <add key="PAGE_NAME_PRINT_FRAME_NEWS" value="PrintNews" />
+  <!--' Gestisce la stampa delle notizie-->
+  <add key="PAGE_NAME_PRINT_FRAME_ALBUM" value="PrintAlbum" />
+  <!--' Gestisce la stampa delle presentazioni (album)-->
+  <add key="PAGE_NAME_SSL_POP_UP_MANAGER" value="frmSSLPopUPManager.aspx" />
+  <!--' Gestisce l'attivazione della comunicazione SSL mediante pagina Pop Up-->
+  <!--<add key="PAGE_SSL_NAME_BASKET_PAYMENT_VENDITA" value="SSLBasketPayment_Allarmi"/>-->
+  <!--' Immissione dati di pagamento per la allarmi-->
+  <!--
+	' Definisce le dimensioni predefinite per i forms
+	' di visualizzazione/modifica dati espresse in
+	' percentuale rispetto allo schermo
+	-->
+  <add key="DEFAULT_DATA_ROW_FORM_WIDTH" value="0.8" />
+  <add key="DEFAULT_DATA_ROW_FORM_HEIGHT" value="0.8" />
+  <!--
+	' Numero massimo di caratteri visualizzabili nella
+	' cella di una griglia
+	-->
+  <add key="MAX_GRID_CELL_LENGTH" value="100" />
+  <!--
+	' Numero massimo di elementi predefinito usato
+	' per limitare le risorse usate per le ricerche
+	-->
+  <add key="MAX_SEARCH_RESULT_ELEMENTS" value="200" />
+  <!--' Definizione dei contesti di elaborazione-->
+  <add key="CONTEXT_NAME_RESERVED_AREA" value="ReservedArea" />
+  <add key="CONTEXT_NAME_CUSTOMER_AREA" value="CustomerArea" />
+  <!--
+	' Descrizione del cliente predefinito da impostare
+	' in caso di inzializzazione di una nuova allarmi
+	' (corrisponde alla descrizione del cliente 
+	'  predefinito persente per l'applicazione)
+	-->
+  <add key="DEFAULT_BUY_CUSTOMER_DESCRIPTION" value="" />
+  <!--
+	' Definizione delle specifiche per il pagamento
+	' con carta di credito alla banca
+	' Circuito ShopIn.Net di Cassa di Risparmio di Firenze
+	' mediante le procedure di Infogroup.
+	-->
+  <add key="CREDIT_CARD_DISABLED" value="true" />
+  <!-- 'Disabilitazione dei tipi di pagamento con Carta di Credito -->
+  <add key="POSTE_PAY_DISABLED" value="true" />
+  <!-- 'Disabilitazione dei tipi di pagamento tramite circuiti postali -->
+  <!--
+  ' Tipo di pagamento predefinito da proporre.
+  ' Vedere specifiche PagamentiCartaCredito per 
+  -->
+  <add key="DEFAULT_PAYMENT_TYPE" value="4" />
+  <!-- 4 = PAYPAL -->
+  <add key="CREDIT_CARD_PAYMENT_PID" value="te26le34fu49mo58fr" />
+  <!-- 'pid del venditore / firma dell'acquisto-->
+  <!--<add key="CREDIT_CARD_PAYMENT_LANGUAGE" value="0"/>					'linguaggio: "0" italiano, "1" inglese-->
+  <add key="CREDIT_CARD_PAYMENT_ID" value="411" />
+  <!--'identificativo del venditore-->
+  <add key="CREDIT_CARD_PAYMENT_CURRENCY" value="1" />
+  <!-- 'tipo della valuta, "1" per l'euro-->
+  <add key="CREDIT_CARD_PAYMENT_URL" value="https://extcont.infogroup.it/cgi-bin/check-inn.cgi" />
+  <add key="CREDIT_CARD_ACTIVATION_PAGE_URL" value="http://www.azienda.com/PaymentCommit.asp" />
+  <add key="CREDIT_CARD_PAYMENT_CONFIRMATION_PAGE_URL" value="http://www.azienda.com/PaymentCommit.asp" />
+  <!-- ' Conferma del pagamento  -->
+  <!--<add key="CREDIT_CARD_ACTIVATION_PAGE_URL" value="Site_Azienda/PaymentCommit.aspx"/>-->
+  <!--<add key="CREDIT_CARD_PAYMENT_CONFIRMATION_PAGE_URL" value="Site_Azienda/PaymentCommit.aspx"/>	' Conferma del pagamento -->
+  <!-- Parametri per pagamento con Paypal -->
+  <!-- Per dettagli e specifiche sulle variabili:
+    https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_html_Appx_websitestandard_htmlvariables 
+  -->
+  <add key="PAYPAL_PAGE_URL" value="CustomPaymentPaypal.aspx" />
+  <add key="PAYPAL_RETURN_URL" value="CustomPaymentPaypalReturn.aspx" />
+  <add key="PAYPAL_CANCEL_URL" value="CustomPaymentPaypalCancel.aspx" />
+  <add key="PAYPAL_NOTIFY_URL" value="CustomPaymentPaypalNotify.aspx" />
+  <!-- Link effettivo: 
+          "https://www.paypal.com/cgi-bin/webscr"
+       Link di test:
+          "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  -->
+  <add key="PAYPAL_SERVICE_URL" value="https://www.paypal.com/cgi-bin/webscr" />
+  <add key="PAYPAL_EMAIL_BUSINESS" value="info@logicode.it" />
+  <add key="PAYPAL_EMAIL_NOTIFY" value="info@logicode.it" />
+</appSettings>

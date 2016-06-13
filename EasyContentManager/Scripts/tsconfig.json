@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "module": "amd",
+    "target": "es5",
+    "outDir": "./App"
+  },
+  "files": [
+    "./ooLib/Globals.ts",
+    "./ooLib/BaseObjects.ts",
+    "./ooLib/Datas/DataSource.ts",
+    "./ooLib/Connections/Connection.ts",
+    "./ooLib/Bindings/Binding.ts",
+
+    "./Pages/Default.ts"
+  ],
+  "compileOnSave": true
+}

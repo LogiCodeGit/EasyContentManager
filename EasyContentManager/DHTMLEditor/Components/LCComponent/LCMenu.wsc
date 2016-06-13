@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<component>
+
+<?component error="true" debug="true"?>
+
+<registration
+	description="LCMenu"
+	progid="LCMenu.WSC"
+	version="1.00"
+	classid="{ddf9e400-17d7-11da-9605-0040f41bbc56}"
+>
+</registration>
+
+<public>
+	<property name="Items">
+		<get/>
+	</property>
+	<property name="Visible">
+		<get/>
+		<put/>
+	</property>
+	<method name="AddMenuItem">
+		<PARAMETER name="sName"/>
+		<PARAMETER name="sCaption"/>
+		<PARAMETER name="sParentName"/>
+	</method>
+	<event name="OnSelect"/>
+	<event name="OnClick"/>
+</public>
+
+<implements type="Behavior" id="Behavior"/>
+
+<script language="JScript">
+<![CDATA[
+
+var description = new LCMenu;
+
+function LCMenu()
+{
+	this.get_Items = get_Items;
+	this.get_Visible = get_Visible;
+	this.put_Visible = put_Visible;
+
+	this.AddMenuItem = AddMenuItem;
+}
+
+var Items;
+var Visible;
+
+function get_Items()
+{
+	return Items;
+}
+
+function get_Visible()
+{
+	return Visible;
+}
+
+function put_Visible(newValue)
+{
+	Visible = newValue;
+}
+
+function AddMenuItem(sName,sCaption,sParentName)
+{
+	return "Temporary Value";
+}
+
+]]>
+</script>
+
+</component>

@@ -1,0 +1,30 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Page.master.vb" Inherits="EasyContentManager.Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="Stylesheet" href="../Contents.css"type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frmMaster" runat="server">
+    <div style="text-align: center">
+        <div style='background-image: /images/backgroundLine.gif; background-repeat: repeat; background-attachment: fixed;'>
+            <asp:Image ID="imgTopATS" runat="server" ImageUrl="~/images/logo_ats_piccolo.gif" />
+            <asp:Image ID="ImgTopTOSA" runat="server" ImageUrl="~/images/ats_au_to_sv.png" />
+            <br />
+        </div>
+        <hr />
+        <asp:ContentPlaceHolder runat="server" ID="phContent">
+            <p>
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            </p>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    &nbsp;
+</body>
+</html>

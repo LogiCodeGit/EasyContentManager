@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Settings>
+    <Key>EasyContentManager|RelativeBaseFilePath</Key>
+    <Value>D:\DDR.WRK\Web.Net2015\EasyContentManager\EasyContentManager\public</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager1|ConnectionString</Key>
+    <Value>D:\DDR.WRK\Sites.Net2013\EasyContentManger\EasyContentManager\mdb-database\EasyContentManager.mdb</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager1|RelativeBaseFilePath</Key>
+    <Value>D:\DDR.WRK\Sites.Net2013\EasyContentManger\EasyContentManager\public</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager2|ConnectionString</Key>
+    <Value>EasyContentManager</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager2|RelativeBaseFilePath</Key>
+    <Value>D:\DDR.WRK\Web.Net2015\EasyContentManager\EasyContentManager\public</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager3|ConnectionString</Key>
+    <Value>D:\DDR.WRK\Web.Net2015\EasyContentManger\EasyContentManger\mdb-database\EasyContentManager.mdb</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager3|RelativeBaseFilePath</Key>
+    <Value>D:\DDR.WRK\Web.Net2015\EasyContentManger\EasyContentManger\public</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager4|ConnectionString</Key>
+    <Value>D:\DDR.WRK\Web.Net2015\EasyContentManager\EasyContentManager\mdb-database\EasyContentManager.mdb</Value>
+  </Settings>
+  <Settings>
+    <Key>EasyContentManager4|RelativeBaseFilePath</Key>
+    <Value>D:\DDR.WRK\Web.Net2015\EasyContentManager\EasyContentManager\public</Value>
+  </Settings>
+</NewDataSet>
